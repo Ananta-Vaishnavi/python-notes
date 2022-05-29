@@ -642,13 +642,34 @@ data = {
 # Convert the dictionary into DataFrame 
 df = pd.DataFrame(data)
 print(df)
+'''
+    A   B   C   D   E
+0  A1  B1  C1  D1  E1
+1  A2  B2  C2  D2  E2
+2  A3  B3  C3  D3  E3
+3  A4  B4  C4  D4  E4
+4  A5  B5  C5  D5  E5
+'''
 df.drop(['A'], axis = 1, inplace = True)
 print(df)
-
+'''
+   B   C   D   E
+0  B1  C1  D1  E1
+1  B2  C2  D2  E2
+2  B3  C3  D3  E3
+3  B4  C4  D4  E4
+4  B5  C5  D5  E5
+'''
 df.drop(['C', 'D'], axis = 1,inplace = True)
 print(df)
-
-
+'''
+    A   B   E
+0  A1  B1  E1
+1  A2  B2  E2
+2  A3  B3  E3
+3  A4  B4  E4
+4  A5  B5  E5
+''' 
 data = {
     'A':['A1', 'A2', 'A3', 'A4', 'A5'], 
     'B':['B1', 'B2', 'B3', 'B4', 'B5'], 
@@ -659,6 +680,15 @@ data = {
 # Convert the dictionary into DataFrame 
 df = pd.DataFrame(data)
 df.to_csv('data1.csv', sep=',', index=False,header=True)  
+'''
+A file named data1.csv gets created with the information in it as such
+A,B,C,D,E
+A1,B1,C1,D1,E1
+A2,B2,C2,D2,E2
+A3,B3,C3,D3,E3
+A4,B4,C4,D4,E4
+A5,B5,C5,D5,E5
+'''
 # Remove all columns between column index 1 to 3
 df.drop(df.iloc[:, 1:3], inplace = True, axis = 1)
 print(df)
