@@ -94,12 +94,29 @@ print("__________________")
 stu_det = {"s1": 42.0, "s2": 38.0, "s3": 39.0}
 stu = pd.Series(stu_det)
 print(stu)
+'''
+s1    42.0
+s2    38.0
+s3    39.0
+dtype: float64
+'''
 print("__________________")
 #Pandas use the loc attribute to return one or more specified row(s)
 
 print(df.loc[0])
+'''
+rno       1
+name    sri
+cgpa     76
+Name: 0, dtype: object
+'''
 print("__________________")
 print(df.loc[[0, 1]])
+'''
+   rno  name  cgpa
+0    1   sri    76
+1    2  rama    91
+'''
 print("-----------------------")
 
 data = [{'area': 'new-hills', 'rainfall': 100, 'temperature': 20},
@@ -108,6 +125,12 @@ data = [{'area': 'new-hills', 'rainfall': 100, 'temperature': 20},
 
 df = pd.DataFrame.from_dict(data)
 print(df)
+'''
+        area  rainfall  temperature
+0  new-hills       100           20
+1  cape-town        70           25
+2     mumbai       200           39
+'''
 
 #Read JSON
 import pandas as pd
@@ -149,18 +172,42 @@ data = {
 
 df = pd.DataFrame(data)
 print(df) 
+'''
+   Duration  Pulse  Maxpulse  Calories
+0        60    110       130     409.1
+1        60    117       145     479.0
+2        60    103       135     340.0
+3        45    109       175     282.4
+4        45    117       148     406.0
+5        60    102       127     300.5
+'''
 print("__________________")
 df = pd.read_json('data.json')
 print(df.to_string()) 
+'''
+member #002 member #003 member #001
+first name        John      Elijah        Jane
+last name          Doe       Baley         Doe
+age                 34          27          42
+'''
 #Print the first 5 rows of the DataFrame
 print(df.head())
-
 print("__________________")
 #Print the last 5 rows of the DataFrame
 print(df.tail())
 print(df.info()) 
-
-
+'''
+<class 'pandas.core.frame.DataFrame'>
+Index: 3 entries, first name to age
+Data columns (total 3 columns):
+ #   Column       Non-Null Count  Dtype 
+---  ------       --------------  ----- 
+ 0   member #002  3 non-null      object
+ 1   member #003  3 non-null      object
+ 2   member #001  3 non-null      object
+dtypes: object(3)
+memory usage: 96.0+ bytes
+'''
 df = pd.read_csv('sample.csv')
 print(df)
 
