@@ -6,19 +6,62 @@
 import pandas as pd
 df = pd.read_csv('data.csv')
 print(df)
-print(df['name'])
-print(df['name'].tolist())
+'''
+ rno     name  cgpa  dept
+0    1      sri    76   cse
+1    2     rama    91    ds
+2    3  lakshmi    87   iot
+'''
 print("__________________")
-print(df.head(5))
+print(df['name'])
+'''
+0        sri
+1       rama
+2    lakshmi
+
+Name: name, dtype: object
+'''
+print("__________________")
+print(df['name'].tolist())
+'''
+['sri', 'rama', 'lakshmi']
+'''
+print("__________________")
+print(df.head(1))
+'''
+   rno name  cgpa dept
+0    1  sri    76  cse
+ 
+'''
 print("__________________")
 print(df.drop(0))
+'''
+   rno     name  cgpa dept
+1    2     rama    91   ds
+2    3  lakshmi    87  iot
+ 
+'''
 print("__________________")
 
 mydataset = {'sub': ["python", "c", "maths"],'marks': [30, 17, 20]}
 myvar = pd.DataFrame(mydataset)
 print(myvar)
+'''
+      sub  marks
+0  python     30
+1       c     17
+2   maths     20
+'''
+print("__________________")
 dept = ['CS','DS','IoT']
 df['dept'] = dept
+'''
+file beforerno,name,cgpa
+1,sri,76
+2,rama,91
+3,lakshmi,87
+file after
+
 print("\nNew DataFrame after inserting the 'dept' column")
 print(df)
 print("__________________")
