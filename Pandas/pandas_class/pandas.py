@@ -699,14 +699,22 @@ data = {
     'C':['C1', 'C2', 'C3', 'C4', 'C5'], 
     'D':['D1', 'D2', 'D3', 'D4', 'D5'], 
     'E':['E1', 'E2', 'E3', 'E4', 'E5'] }
-  
+
 # Convert the dictionary into DataFrame 
 df = pd.DataFrame(data)
 for col in df.columns:
     if 'A' in col:
         del df[col]
-  
-print(df)
+print(df)	
+'''
+    B   C   D   E
+0  B1  C1  D1  E1
+1  B2  C2  D2  E2
+2  B3  C3  D3  E3
+3  B4  C4  D4  E4
+4  B5  C5  D5  E5 
+'''
+print('-----------------------')
 import csv
 
 with open('newsample.csv', 'w', newline='') as file:
@@ -715,10 +723,7 @@ with open('newsample.csv', 'w', newline='') as file:
     writer.writerow( [1, "Sri", "C"])
     writer.writerow([2, "Rama", "Maths"])
     writer.writerow([3, "Devi", "Python Programming"])
-
-
-
-
+print('-------------')
 #If you need to write the contents of the 2-dimensional list to a CSV file,
 #writerows() function to write the content of the list to the CSV file.
 row_list = [["SN", "Name", "Sub"],
@@ -728,16 +733,22 @@ row_list = [["SN", "Name", "Sub"],
 with open('filewriter.csv', 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerows(row_list)
-
+'''
+SN,Name,Sub
+1,Sri,C
+2,Rama,Maths
+3,Devi,Python Programming
+'''
 a_file = open("sampledict.csv", "w")
 a_dict = {"a": 1, "b": 2}
-
 writer = csv.writer(a_file)
 for key, value in a_dict.items():
     writer.writerow([key, value])
-
 a_file.close()
-
+'''
+a,1
+b,2
+'''
 #Dictionary to CSV using csv.DictWriter()
 import csv
 myheaders = ['Name','EID','DOMAIN']
@@ -752,7 +763,14 @@ with open(filename, 'w', newline='') as myfile:
     writer = csv.DictWriter(myfile, fieldnames=myheaders)
     writer.writeheader()
     writer.writerows(myvalues)
+'''
+Name,EID,DOMAIN
+Akil,8901,SUP
+John,7812,DB
+Zoya,8034,SUP
+Asha,1233,DEV
 
+'''
 
 import json
 
@@ -762,3 +780,10 @@ dict = {"member #002":{"first name": "John", "last name": "Doe", "age": 34},
 
 with open('datawriter.json', 'w') as fp:
     json.dump(dict, fp)
+'''
+{
+"member #002": {"first name": "John", "last name": "Doe", "age": 34}, 
+"member #003": {"first name": "Elijah", "last name": "Baley", "age": 27}, 
+"member #001": {"first name": "Jane", "last name": "Doe", "age": 42}
+}
+'''
