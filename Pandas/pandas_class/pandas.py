@@ -61,7 +61,10 @@ file beforerno,name,cgpa
 2,rama,91
 3,lakshmi,87
 file after
-
+1,sri,76,'CS'
+2,rama,91,'DS'
+3,lakshmi,87,'IOT'
+'''
 print("\nNew DataFrame after inserting the 'dept' column")
 print(df)
 print("__________________")
@@ -70,11 +73,23 @@ print("__________________")
 a = [1, 7, 2]
 s = pd.Series(a)
 print(s)
+'''
+0    1
+1    7
+2    2
+dtype: int64
+'''
 print("__________________")
 #Create own labels
 a = [1, 7, 2]
 myvar = pd.Series(a, index = ["x", "y", "z"])
 print(myvar)
+'''
+x    1
+y    7
+z    2
+dtype: int64
+'''
 print("__________________")
 stu_det = {"s1": 42.0, "s2": 38.0, "s3": 39.0}
 stu = pd.Series(stu_det)
